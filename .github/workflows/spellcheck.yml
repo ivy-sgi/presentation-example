@@ -1,0 +1,22 @@
+name: Spell Check
+
+on:
+  pull_request:
+  push:
+    branches: [ main, master ]
+
+jobs:
+  cspell:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run cspell
+        uses: streetsidesoftware/cspell-action@v7
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          config: './cspell.json'          # cspell-Config im Repo
+          incremental_files_only: true     # nur geänderte Dateien im PR
+          strict: true                     # Job schlägt fehl bei Fehlern
