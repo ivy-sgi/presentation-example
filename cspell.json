@@ -1,0 +1,15 @@
+{
+  "version": "0.2",
+  "language": "de,en",
+  "ignorePaths": [
+    "node_modules",
+    "dist",
+    "build",
+    "target",
+    ".git"
+  ],
+  "words": [
+    "AxonIvy",
+    "MailStore"
+  ]
+}
